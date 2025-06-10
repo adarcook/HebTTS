@@ -89,7 +89,7 @@ def infer_texts(
             temperature=temperature,
         )
 
-        audio_path = Path(output_dir) / f"{filename}.wav"
+        audio_path = Path(output_dir) / filename
 
         if args.mbd:
             samples = audio_tokenizer.mbd_decode(encoded_frames.transpose(2, 1))
