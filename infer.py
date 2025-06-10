@@ -322,7 +322,7 @@ if __name__ == '__main__':
     if args.csv_path:
         import csv
         with open(args.csv_path, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f, delimiter="|")
+            reader = csv.DictReader(f, delimiter=",")
             texts_with_filenames = [(row["filename"], row["text"]) for row in reader]
     else:
         if os.path.exists(args.text):
