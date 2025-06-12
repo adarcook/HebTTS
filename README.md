@@ -26,8 +26,8 @@ ___
 
 ## Try it out!
 You can try our model in the [google colab](https://colab.research.google.com/drive/1f3-6Dqbna9_hI5C9V4qTIG05dixW-r72?usp=sharing) demo.
-## Installation
 
+## Installation
 
 ```bash
 git clone https://github.com/slp-rl/HebTTS.git
@@ -38,43 +38,33 @@ in [google drive](https://drive.google.com/file/d/11NoOJzMLRX9q1C_Q4sX0w2b9miiDj
 AR model trained for 1.2M steps and NAR model for 200K steps on [HebDB](https://pages.cs.huji.ac.il/adiyoss-lab/HebDB/).
 
 ```bash
-gdown 11NoOJzMLRX9q1C_Q4sX0w2b9miiDjGrv
-```
-### Install Dependencies
-
-```bash
-pip install torch torchaudio
-pip install torchmetrics
-pip install omegaconf
-pip install git+https://github.com/lhotse-speech/lhotse
-pip install librosa
-pip install encodec
-pip install phonemizer
-pip install audiocraft  # optional
-pip install 'numpy<2'
+pip install uv
+uv sync
+uv run gdown 11NoOJzMLRX9q1C_Q4sX0w2b9miiDjGrv
 ```
 
 ## Inference
 
 You can play with the model with different speakers and text prompts.
 
-run `infer.py`:
-
 ```
-python infer.py  --checkpoint checkpoint.pt --output-dir ./out --text "היי מה קורה"
+uv run infer.py  --checkpoint checkpoint.pt --output-dir ./out --text "היי מה קורה"
 ```
 
 you can specify additional arguments
 `--speaker` and `--top-k`.
+
+## Create multiple samples from csv
+
+```console
+uv run infer.py  --checkpoint checkpoint.pt --output-dir ./out --csv_path ./example.csv
+```
 
 ### Multi Band Diffusion
 
 > [!TIP] 
 > We allow using the new Multi Band Diffusion (MBD) vocoder for generating a better quallity audio.
 Install audiocraft and set `--mbd True` flag.
-
-
-
 
 ### Text
 
@@ -90,7 +80,7 @@ terminal is inconvenient.
 and run
 
 ```
-python infer.py  --checkpoint checkpoint.pt --output-dir ./out --text example.txt
+uv run python infer.py  --checkpoint checkpoint.pt --output-dir ./out --text example.txt
 ```
 
 ### Speakers
