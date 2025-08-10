@@ -1,0 +1,38 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+       
+        // {
+        //     "name": "Run HebTTS Inference",
+        //     "type": "debugpy",
+        //     "request": "launch",
+        //     "program": "${workspaceFolder}/infer.py",
+        //     "console": "integratedTerminal",
+        //     "args": [
+        //         "--checkpoint", "checkpoint.pt",
+        //         "--output-dir", "./out",
+        //         "--csv_path", "./example.csv",
+        //         "--speaker", "omer"
+        //     ],
+        //     "env": {
+        //         "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python"
+        //     }
+        // },
+         {
+            "name": "Run HebTTS Inference",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/workflow/main.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--text", "סיימתי! איזה כיף - אני ממש מרוצה!, אני אלך לראות עכשיו את הסדרה הלוטוס הלבן, למרות שהסדרה הזאת די משעממת. אבל אני עושה את זה בשביל אשתי היקרה",
+            ],
+            "env": {
+                "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python"
+            }
+        }
+    ]
+}

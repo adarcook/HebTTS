@@ -9,3 +9,7 @@ geek:
 shaul:
   text-prompt: "ובשביל להבין למה מחיר הדלק כל כך עלה, צריך לחזור שנתיים אחורנית."
   audio-prompt: "shaul.wav"
+
+omer:
+  text-prompt: "ואם אתה מצליח לשפר את איכות החיזוי אתה יכול להציל חיי אדם"
+  audio-prompt: "omer.wav"
