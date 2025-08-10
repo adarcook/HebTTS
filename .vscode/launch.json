@@ -28,7 +28,7 @@
             "program": "${workspaceFolder}/workflow/main.py",
             "console": "integratedTerminal",
             "args": [
-                "--text", "סיימתי! איזה כיף - אני ממש מרוצה!, אני אלך לראות עכשיו את הסדרה הלוטוס הלבן, למרות שהסדרה הזאת די משעממת. אבל אני עושה את זה בשביל אשתי היקרה",
+                "--text", "יופי אני בא, בטוח שיהיה פרק מצוין. אולי נכין פופקורן או משהו?"
             ],
             "env": {
                 "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python"

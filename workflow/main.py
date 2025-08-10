@@ -7,6 +7,25 @@ import argparse
 output_foler = "out"
 
 
+def wav_to_mp3(wav_path, mp3_path, bitrate="192k"):
+    """
+    Convert WAV file to MP3 using ffmpeg.
+
+    :param wav_path: Path to input WAV file
+    :param mp3_path: Path to output MP3 file
+    :param bitrate: Bitrate for MP3 (default 192k)
+    """
+    cmd = [
+        "ffmpeg",
+        "-y",  # overwrite output file if exists
+        "-i", wav_path,
+        "-b:a", bitrate,
+        mp3_path
+    ]
+
+    subprocess.run(cmd, check=True)
+
+
 def main():
     parser = argparse.ArgumentParser(description="Process some text and generate audio.")
     parser.add_argument('--text', type=str, required=True, help="Text to process")
@@ -35,6 +54,7 @@ def main():
 
     # Run command
     subprocess.run(cmd, check=True)
+    wav_to_mp3(output_file, f"{output_foler}/0_full.mp3")
 
 
 if __name__ == "__main__":
